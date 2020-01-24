@@ -5,7 +5,7 @@ gem 'faker'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 
-gem 'devise', '~> 4.6.0'
+gem 'devise', '~> 4.7.1'
 
 gem 'bcrypt', '~> 3.1.13'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
