@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-text"><%= @post.title %></h1>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= @post.body %></p>
+  </div>
+</div>
+
+<% if @post.comments.any? %>
+  <h4>Here are the comments for this post:</h4>
+
+  <% @post.comments.each do |comment| %>
+    <ul>
+      <li> Comment by <%= link_to comment.name, post_comment_path(@post, comment) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No comments are listed for this post.</p>
+<% end %>
+
+<p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
+
+<p><%= link_to "Edit", edit_post_path(@post) %></p>
+<p><%= link_to "Delete post", post_path(@post),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to posts", posts_path %></p>
